@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Shop</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#products">Products</a>
+            <a href="#" onclick="openContactModal()">Contact</a>
+        </nav>
+        <div id="cart-icon" onclick="toggleCart()">🛒 (<span id="cart-count">0</span>)</div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 style="margin-top: -6cm;">Welcome to the Hardware Shop</h1>
+            <p>Your ultimate destination for custom laptops powered by the latest M-series processors!</p>
+            <button style="margin-top: -6cm;" onclick="scrollToProducts()">Shop Now</button>
+        </div>
+    </div>
+
+    <!-- Product Section -->
+    <div class="container">
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="product-list">
+                <!-- MacBook Air M2 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="MacBook Air M2">
+                    <div class="details">
+                        <h3>MacBook Air M2</h3>
+                        <div class="description">Lightweight and efficient for everyday use.</div>
+                        <div class="price">$1,099</div>
+                        <button onclick="customizeProduct(1, 'MacBook Air M2', 1099)">Customize</button>
+                    </div>
+                </div>
+                <!-- MacBook Pro M2 -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="MacBook Pro M2">
+                    <div class="details">
+                        <h3>MacBook Pro M2</h3>
+                        <div class="description">Powerful performance for programming tasks.</div>
+                        <div class="price">$1,299</div>
+                        <button onclick="customizeProduct(2, 'MacBook Pro M2', 1299)">Customize</button>
+                    </div>
+                </div>
+                <!-- Additional MacBooks -->
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="MacBook Air M3">
+                    <div class="details">
+                        <h3>MacBook Air M3</h3>
+                        <div class="description">Compact and efficient with the latest M3 chip.</div>
+                        <div class="price">$1,199</div>
+                        <button onclick="customizeProduct(3, 'MacBook Air M3', 1199)">Customize</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="MacBook Pro M3">
+                    <div class="details">
+                        <h3>MacBook Pro M3</h3>
+                        <div class="description">High performance for software development.</div>
+                        <div class="price">$1,399</div>
+                        <button onclick="customizeProduct(4, 'MacBook Pro M3', 1399)">Customize</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="MacBook Air M4">
+                    <div class="details">
+                        <h3>MacBook Air M4</h3>
+                        <div class="description">Lightweight and cutting-edge performance.</div>
+                        <div class="price">$1,499</div>
+                        <button onclick="customizeProduct(5, 'MacBook Air M4', 1499)">Customize</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/150" alt="MacBook Pro M4">
+                    <div class="details">
+                        <h3>MacBook Pro M4</h3>
+                        <div class="description">Ultimate performance for creative tasks.</div>
+                        <div class="price">$1,799</div>
+                        <button onclick="customizeProduct(6, 'MacBook Pro M4', 1799)">Customize</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Your Cart</h3>
+            <div id="cart-items"></div>
+            <p>Total: <span id="cart-total">$0.00</span></p>
+            <button onclick="checkout()">Pay Now</button>
+            <button onclick="closeCart()">Close</button>
+        </div>
+    </div>
+
+    <!-- Customize Modal -->
+    <div id="customize-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Customize Your Laptop</h3>
+            <p>Select a color:</p>
+            <button class="option" onclick="selectCustomization('color', 'Space Grey', this)">Space Grey</button>
+            <button class="option" onclick="selectCustomization('color', 'Silver', this)">Silver</button>
+            <p>Select a diagonal size:</p>
+            <button class="option" onclick="selectCustomization('size', '14-inch', this)">14-inch</button>
+            <button class="option" onclick="selectCustomization('size', '16-inch', this)">16-inch</button>
+            <button onclick="addToCart()">Add to Cart</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Hardware Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
